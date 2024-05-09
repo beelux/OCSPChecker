@@ -91,7 +91,7 @@ def test_extract_ocsp_url_success():
     cert_chain = get_certificate_chain(host, port)
     ocsp_url = extract_ocsp_url(cert_chain)
 
-    assert ocsp_url == "http://ocsp.digicert.com"
+    assert ocsp_url == "http://ocsp.sectigo.com"
 
 
 def test_build_ocsp_request_success():
@@ -197,7 +197,7 @@ def test_end_to_end_success_test():
 
     assert ocsp_result == [
         "Host: github.com:443",
-        "OCSP URL: http://ocsp.digicert.com",
+        "OCSP URL: http://ocsp.sectigo.com",
         "OCSP Status: GOOD",
     ]
 
@@ -287,7 +287,7 @@ def test_no_port_supplied():
 
     assert ocsp_request == [
         "Host: github.com:443",
-        "OCSP URL: http://ocsp.digicert.com",
+        "OCSP URL: http://ocsp.sectigo.com",
         "OCSP Status: GOOD",
     ]
 
@@ -300,7 +300,7 @@ def test_strip_http_from_host():
 
     assert ocsp_request == [
         "Host: http://github.com:443",
-        "OCSP URL: http://ocsp.digicert.com",
+        "OCSP URL: http://ocsp.sectigo.com",
         "OCSP Status: GOOD",
     ]
 
@@ -313,7 +313,7 @@ def test_strip_https_from_host():
 
     assert ocsp_request == [
         "Host: https://github.com:443",
-        "OCSP URL: http://ocsp.digicert.com",
+        "OCSP URL: http://ocsp.sectigo.com",
         "OCSP Status: GOOD",
     ]
 
